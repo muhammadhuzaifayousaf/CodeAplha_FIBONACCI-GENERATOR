@@ -1,5 +1,13 @@
 import matplotlib.pyplot as plt
 
+def main():
+    n = int(input("Enter the number of Fibonacci numbers to generate: "))
+    sequence = fibonacci_generator(n)
+    print(f"Fibonacci Sequence: {sequence}")  # Print the sequence to the console
+    ratios, golden_ratio_approx = analyze_fibonacci(sequence)
+    print(f"Golden Ratio Approximation: {golden_ratio_approx}")
+    visualize_fibonacci(sequence, ratios)
+
 def fibonacci_generator(n):
     a, b = 1, 1  # Starting from 1 to avoid division by zero
     sequence = []
@@ -33,13 +41,6 @@ def visualize_fibonacci(sequence, ratios):
 
     plt.tight_layout()
     plt.show()
-
-def main():
-    n = int(input("Enter the number of Fibonacci numbers to generate: "))
-    sequence = fibonacci_generator(n)
-    ratios, golden_ratio_approx = analyze_fibonacci(sequence)
-    print(f"Golden Ratio Approximation: {golden_ratio_approx}")
-    visualize_fibonacci(sequence, ratios)
 
 if __name__ == "__main__":
     main()
